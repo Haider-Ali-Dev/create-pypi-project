@@ -114,7 +114,7 @@ def create_project(name, author):
             click.secho("Created README.md", fg="green")
             create_file(name, "LICENSE", content=LICENSE_CONTENT.format(author))
             click.secho("Created LICENSE file with defualt license", fg="green")
-            click.secho("You can a different license from https://choosealicense.com/", fg="blue")
+            click.secho("You can choose a different license from https://choosealicense.com/", fg="blue")
             create_file_in_example_project(name, "__init__.py", content=None)
             create_file_in_example_project(name, "main.py", "print('Hello World')")
             click.secho(f"Sucessfully created Pypi project: {name}", fg="yellow")
