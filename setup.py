@@ -10,15 +10,15 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="create-pypi-project",
-    version="0.0.4",
+    version="0.0.5",
     author="Haider Ali",
     author_email="ali075398@gmail.com",
     description="A command line for creating Pypi projects",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/Haider-Ali-Dev/create-pypi-project",
     project_urls={
-        "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
+        "Bug Tracker": "https://github.com/Haider-Ali-Dev/create-pypi-project/issues",
     },
     packages = find_packages(),
     entry_points = {
