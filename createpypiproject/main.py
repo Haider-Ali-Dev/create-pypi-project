@@ -67,13 +67,13 @@ SOFTWARE.
 """
 
 
-def create_file_in_src(name: str, file: str, content: str | None = None) -> bool:
+def create_file(name: str, file: str, content: str | None = None) -> bool:
     try:
         if content == None:
-            with open(f"{name}/src/{file}", mode="w"):
+            with open(f"{name}/{file}", mode="w"):
                 return True
         elif type(content) == str and content != None:
-            with open(f"{name}/src/{file}", mode="w") as f:
+            with open(f"{name}/{file}", mode="w") as f:
                 f.write(content)
     except:
         return False
@@ -104,15 +104,15 @@ def create_project(name, author):
             os.mkdir(f'{name}/src/example_project')
             click.secho(f"Made a directory named {name}", fg="green")
 
-            create_file_in_src(name, "pyproject.toml", PYPROJECT_TOML)
+            create_file(name, "pyproject.toml", PYPROJECT_TOML)
             click.secho("Created project.toml", fg="green")
 
-            create_file_in_src(name, "setup.cfg", content=SETUP_CFG.format(name, author))
+            create_file(name, "setup.cfg", content=SETUP_CFG.format(name, author))
             click.secho("Created setup.cfg", fg="green")
 
-            create_file_in_src(name, "README.md", content=READ_ME_FILE_CONTENT.format(name))
+            create_file(name, "README.md", content=READ_ME_FILE_CONTENT.format(name))
             click.secho("Created README.md", fg="green")
-            create_file_in_src(name, "LICENSE", content=LICENSE_CONTENT.format(author))
+            create_file(name, "LICENSE", content=LICENSE_CONTENT.format(author))
             click.secho("Created LICENSE file with defualt license", fg="green")
             click.secho("You can a different license from https://choosealicense.com/", fg="blue")
             create_file_in_example_project(name, "__init__.py", content=None)

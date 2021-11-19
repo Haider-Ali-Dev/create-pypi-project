@@ -10,7 +10,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="create-pypi-project",
-    version="0.0.5",
+    version="0.0.7",
     author="Haider Ali",
     author_email="ali075398@gmail.com",
     description="A command line for creating Pypi projects",
@@ -35,5 +35,6 @@ setup(
         'click'
     ],
     python_requires=">=3.6",
-    zip_safe = False
+    zip_safe = False,
+    keywords=["python tool", "command line"]
 )
