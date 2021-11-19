@@ -81,10 +81,10 @@ def create_file(name: str, file: str, content: str | None = None) -> bool:
 def create_file_in_example_project(name: str, file: str, content: str | None = None) -> bool:
     try:
         if content == None:
-            with open(f"{name}/src/example_project/{file}", mode="w"):
+            with open(f"{name}/src/{name}/{file}", mode="w"):
                 return True
         elif type(content) == str and content != None:
-            with open(f"{name}/src/example_project/{file}", mode="w") as f:
+            with open(f"{name}/src/{name}/{file}", mode="w") as f:
                 f.write(content)
     except:
         return False
@@ -101,7 +101,7 @@ def create_project(name, author):
             click.echo(f"Started creating a Pypi project {name}")
             os.mkdir(name)
             os.mkdir(f"{name}/src")
-            os.mkdir(f'{name}/src/example_project')
+            os.mkdir(f'{name}/src/{name}')
             click.secho(f"Made a directory named {name}", fg="green")
 
             create_file(name, "pyproject.toml", PYPROJECT_TOML)
